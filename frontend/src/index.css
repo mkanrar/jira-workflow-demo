@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Inter', system-ui, sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+}
+
+.mono { font-family: 'JetBrains Mono', monospace; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #1e293b; }
+::-webkit-scrollbar-thumb { background: #334155; border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #475569; }
+
+/* Diff viewer */
+.diff-add    { background: #14532d44; color: #86efac; }
+.diff-remove { background: #7f1d1d44; color: #fca5a5; }
+.diff-header { background: #1e3a5f55; color: #93c5fd; }
+
+/* Animate AI loading */
+@keyframes shimmer {
+  0%   { background-position: -1000px 0; }
+  100% { background-position: 1000px 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, #1e293b 25%, #334155 50%, #1e293b 75%);
+  background-size: 1000px 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* Markdown output */
+.ai-output h2 { font-size: 1rem; font-weight: 700; color: #93c5fd; margin: 0.75rem 0 0.25rem; }
+.ai-output h3 { font-size: 0.9rem; font-weight: 600; color: #7dd3fc; margin: 0.5rem 0 0.25rem; }
+.ai-output p  { margin: 0.25rem 0; line-height: 1.6; }
+.ai-output ul { list-style: disc; padding-left: 1.25rem; margin: 0.25rem 0; }
+.ai-output li { margin: 0.15rem 0; }
+.ai-output code { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; background: #1e293b; padding: 1px 5px; border-radius: 3px; color: #a5f3fc; }
+.ai-output strong { color: #e2e8f0; }
